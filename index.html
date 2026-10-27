@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Physical Interp Labs</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBoeXNpY2FsIEludGVycCBMYWJzIGxvZ28iPgogIDwhLS0gb3V0ZXIgZnJhbWU6IGEgcm91bmRlZCBzcXVhcmUgc3VnZ2VzdGluZyBhIHBoeXNpY2FsIHN5c3RlbSAvIGNoaXAgLS0+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNGU3OSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPCEtLSBpbnRlcm5hbCBjaXJjdWl0OiBub2RlcyBhbmQgZWRnZXMgLS0+CiAgPGcgc3Ryb2tlPSIjMWY0ZTc5IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxsaW5lIHgxPSIxOCIgeTE9IjIyIiB4Mj0iMzIiIHkyPSIzMiIvPgogICAgPGxpbmUgeDE9IjQ2IiB5MT0iMjIiIHgyPSIzMiIgeTI9IjMyIi8+CiAgICA8bGluZSB4MT0iMzIiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iNDYiLz4KICAgIDxsaW5lIHgxPSIxOCIgeTE9IjIyIiB4Mj0iNDYiIHkyPSIyMiIvPgogIDwvZz4KICA8ZyBmaWxsPSIjMWY0ZTc5Ij4KICAgIDxjaXJjbGUgY3g9IjE4IiBjeT0iMjIiIHI9IjQiLz4KICAgIDxjaXJjbGUgY3g9IjQ2IiBjeT0iMjIiIHI9IjQiLz4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iNDYiIHI9IjQiLz4KICA8L2c+CiAgPCEtLSB0aGUgcHJvYmVkIG5vZGU6IG9wZW4gY2lyY2xlLCB0aGUgb25lIHdlIGxvb2sgaW5zaWRlIC0tPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzFmNGU3OSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KPC9zdmc+Cg==">
-  <meta name="description" content="Physical Interp Labs is an early-stage research project bringing mechanistic interpretability to physical AI: robot policies, vision-language-action models, and world models.">
+  <meta name="description" content="Physical Interp Labs is an early-stage research project bringing mechanistic interpretability to physical AI: robot policies, vision-language-action models, and world models. Founded by Bojro Das, author of Inherited Heads (arXiv:2609.14174).">
   <style>
     :root {
       --bg: #ffffff;
@@ -13,6 +13,7 @@
       --muted: #555555;
       --rule: #e2e2e2;
       --accent: #1f4e79;
+      --panel: #f3f6fa;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -21,6 +22,7 @@
         --muted: #a0a0a0;
         --rule: #2c2c2c;
         --accent: #8fb6dc;
+        --panel: #181d24;
       }
     }
     * { box-sizing: border-box; }
@@ -33,11 +35,11 @@
       line-height: 1.6;
     }
     main {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       padding: 48px 16px 64px;
     }
-    header { margin-bottom: 40px; }
+    header { margin-bottom: 28px; }
     .brand {
       display: flex;
       align-items: center;
@@ -68,6 +70,55 @@
     .note {
       font-size: 0.95rem;
       color: var(--muted);
+    }
+    .paper {
+      background: var(--panel);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin: 0 0 32px;
+    }
+    .paper .kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .paper .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .paper .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .paper p:last-child { margin-bottom: 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stats li { margin: 0; }
+    .stats .n {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .stats .l {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 480px) {
+      .stats { grid-template-columns: 1fr; }
     }
     footer {
       margin-top: 48px;
@@ -102,33 +153,63 @@
       <p class="tagline">Bringing mechanistic interpretability to physical AI.</p>
     </header>
 
-    <p>Physical Interp Labs is an early-stage research project studying the internals of neural networks that act in the physical world: robot policies, vision-language-action (VLA) models, and world models used for robotics and drones.</p>
+    <section class="paper">
+      <div class="kicker">Latest work</div>
+      <p class="title"><a href="https://arxiv.org/abs/2609.14174">Inherited Heads: Audio language models track speakers with their text backbone's attention, and an attention-mass ranking retrieves a different set</a></p>
+      <p class="meta">Bojro Das. arXiv:2609.14174, September 2026. Sole-authored preprint, 20 pages.</p>
+      <p>Fewer than a tenth of an audio language model's attention heads decide which of six speakers it describes, and those heads are inherited from the text-only model it was built on. Adding a fixed bias to about 100 heads, with no training, redirects the model to any chosen speaker. Rank the <em>text</em> backbone on a written version of the task, carry its top heads over unchanged, and they steer the audio model, with nothing about audio entering the selection. Tested on Qwen2-Audio-7B, Ultravox-8B, and SALMONN-13B in 4-bit on consumer GPUs.</p>
+      <ul class="stats">
+        <li><span class="n">90.7&ndash;99.0%</span><span class="l">of trials steered to the chosen speaker</span></li>
+        <li><span class="n">80.8&ndash;95.0%</span><span class="l">steered using heads ranked on the text model alone</span></li>
+        <li><span class="n">&lt;10%</span><span class="l">of the model's heads needed</span></li>
+      </ul>
+    </section>
 
-    <h2>Motivation</h2>
-    <p>Mechanistic interpretability aims to understand what a neural network computes internally: the features it represents, the circuits that connect them, and how those give rise to its behavior. Most of this work to date has focused on language models.</p>
-    <p>Models that control physical systems make decisions with real-world consequences. When a drone or a robot arm does something unexpected, it is not enough to observe that it happened; we want to know why. Understanding the internal representations of these models matters for:</p>
+    <p>Physical Interp Labs studies the internals of neural networks that act in the physical world: robot policies, vision-language-action (VLA) models, and world models used for robotics and drones. The goal is to make these models legible: to find the features and circuits that drive an action, and to use them to predict, steer, and verify behavior before it reaches hardware.</p>
+
+    <h2>Why this matters</h2>
+    <p>Learned policies are moving onto real robots and drones fast. VLA models, diffusion policies, and reinforcement-learning controllers already fly, grasp, and drive. Almost all of them are evaluated the same way: run the policy, count successes. That tells you <em>whether</em> it works on the cases you tried. It tells you nothing about <em>why</em>, and nothing about the cases you did not try.</p>
+    <p>This project comes from direct experience with that gap. Training a PPO flight policy across 4,096 parallel simulations in NVIDIA Isaac Lab for the Anduril AI Grand Prix, then putting it on a real quadrotor, surfaced faults that no amount of simulation could show: a reversed pitch axis, stick commands scaled anywhere from 0.62x to 2.4x, a control link running at a different rate than the policy assumed. Each was found by hardware-in-the-loop testing, after the fact. Every one of them lived inside the policy's inputs and outputs, and in principle could have been read off the network before the first flight.</p>
+    <p>Mechanistic interpretability is the toolkit for doing that reading. In language models it has located the circuits behind specific behaviors, found interpretable features with sparse autoencoders, and steered models by editing a handful of components. Inherited Heads showed that the same approach works on a multimodal model and produces a precise, causal result: a small, identifiable set of heads controls a behavior, and that set is traceable to the backbone the model was built from.</p>
+    <p>Physical AI models are built the same way. Most VLAs start from a pretrained vision-language backbone and add an action head. World models for robotics are built on transformers and diffusion models whose internals are increasingly well understood. The techniques transfer. What is missing is the work of applying them to action, where the stakes are physical and the behavior is continuous.</p>
+    <p>Understanding the internals of these models matters for:</p>
     <ul>
-      <li><strong>Safety.</strong> Identifying what a policy is actually attending to, and whether it has learned shortcuts that could fail outside its training distribution.</li>
-      <li><strong>Debugging.</strong> Locating the source of a failure inside the model rather than treating it as a black box.</li>
-      <li><strong>Reliability.</strong> Building evidence about when a model's behavior can be trusted, beyond aggregate benchmark scores.</li>
+      <li><strong>Safety.</strong> Finding what a policy is actually attending to, and whether it has learned a shortcut that will fail outside the training distribution, before it is flown.</li>
+      <li><strong>Debugging.</strong> Locating a failure inside the network instead of bisecting it through flight tests.</li>
+      <li><strong>Reliability.</strong> Evidence about when a model's behavior can be trusted that is stronger than an aggregate success rate.</li>
+      <li><strong>Steering.</strong> Correcting a behavior by editing a small set of components, with no retraining, as Inherited Heads did for speaker selection.</li>
     </ul>
 
     <h2>Research directions</h2>
-    <p class="note">This is planned and ongoing exploratory work. None of it should be read as results.</p>
+    <p class="note">This is planned and ongoing exploratory work, not results.</p>
     <ul>
-      <li><strong>Feature discovery in action models.</strong> Applying sparse dictionary methods (such as sparse autoencoders) to the activations of open VLA and robot policy models to find interpretable features tied to perception, planning, and motor output.</li>
-      <li><strong>Circuit analysis of control behavior.</strong> Tracing how specific inputs (an obstacle, a target object, a command) propagate through the network to influence the action taken.</li>
-      <li><strong>Representations in world models.</strong> Examining whether world models used for robotics and drones encode physical quantities such as position, velocity, or contact in a readable way.</li>
-      <li><strong>Tooling.</strong> Adapting interpretability tooling built for language models to the multimodal, continuous-action setting of physical AI.</li>
+      <li><strong>Inherited circuits in VLAs.</strong> VLA models are built on vision-language backbones. Inherited Heads found that an audio model's task-critical heads came from its text backbone. The direct follow-up: do the heads and features that drive a VLA's actions come from its backbone, and can they be found by ranking the backbone alone?</li>
+      <li><strong>Feature discovery in action models.</strong> Sparse dictionary methods (sparse autoencoders and successors) on the activations of open VLA and robot policy models, looking for features tied to perception, planning, and motor output.</li>
+      <li><strong>Circuit analysis of control behavior.</strong> Tracing how a specific input (an obstacle, a target, a gate, a command) propagates through the network to the action taken, and whether editing a small component set can redirect it, as it did for speaker selection.</li>
+      <li><strong>Representations in world models.</strong> Whether world models used for robotics and drones encode physical quantities such as position, velocity, and contact in a readable, steerable way.</li>
+      <li><strong>Tooling.</strong> Adapting interpretability tooling built for language models to the multimodal, continuous-action setting, including the sweep-and-verify harness built for Inherited Heads.</li>
     </ul>
 
-    <h2>Current status</h2>
-    <p>Early-stage research. There is no product, no users, and no external funding. Experiments are currently run on a laptop and rented cloud GPUs, with plans to move to AWS as the work grows.</p>
-    <p>Code, notes, and experiment writeups will be added to the <a href="https://github.com/bojro/physical-interp">GitHub repository</a> as the work progresses.</p>
+    <h2>Prior interpretability work</h2>
+    <ul>
+      <li><strong><a href="https://arxiv.org/abs/2609.14174">Inherited Heads</a>.</strong> Bojro Das, arXiv:2609.14174, September 2026. Sole-authored preprint, written at Cornell's Math + AI Lab. The harness behind it swept 12,000 configurations over six 7B to 13B models in 4-bit on consumer GPUs, with a build check that rejects any figure not traceable to a run.</li>
+      <li><strong>Independent evaluation of PLOT-DAS</strong>, a published method for locating where a language model represents a causal variable, confirming its reported 10x to 25x compute reduction on the public MIB benchmark with a 126-test suite on one 8 GB GPU.</li>
+    </ul>
 
     <h2>Founder</h2>
-    <p><strong>Bojro Das</strong> is an undergraduate studying Mathematics and Computer Science at Cornell University (class of 2028). Previously worked on software engineering for CU Auto Drone, Cornell's autonomous drone project team.</p>
-    <p>Prior interpretability work: <em>Inherited Heads: Audio language models track speakers with their text backbone's attention, and an attention-mass ranking retrieves a different set</em> (sole author, arXiv preprint, September 2026). <a href="https://arxiv.org/abs/2609.14174">arXiv:2609.14174</a></p>
+    <p><strong>Bojro Das</strong> studies Mathematics and Computer Science at Cornell University (class of 2028) and has been building robots since well before that.</p>
+    <ul>
+      <li><strong>VEX Robotics.</strong> Led a team to the 1st seed at the VEX Robotics World Championship.</li>
+      <li><strong>Anduril AI Grand Prix, autonomous drone racing (2026).</strong> One of 15 teams selected from over 3,000 for the in-person qualifier. Trained the PPO flight policy in Isaac Lab, found and fixed the sim-to-real faults through hardware-in-the-loop testing, and built the onboard gate detector running at 36 fps on the drone's Jetson Orin NX.</li>
+      <li><strong>Cornell University Autonomous Drone (CUAD).</strong> Software engineer on the autonomy subteam. Built a real-time stereo-depth obstacle-localization pipeline publishing to ROS 2 at 15 Hz for the IARC competition, and a gesture-to-flight-command classifier deployed as ROS 2 nodes.</li>
+      <li><strong>Drone telemetry gateway.</strong> A Go service ingesting telemetry from 1,000 simulated drones over MQTT, sustaining 5,000 writes per second to PostgreSQL with zero accepted-message loss through a measured database outage.</li>
+      <li><strong>Interpretability.</strong> Sole author of Inherited Heads, above.</li>
+    </ul>
+    <p>Robotics and interpretability are the two things this project's founder has spent the most time on. Physical Interp Labs is where they meet.</p>
+
+    <h2>Current status</h2>
+    <p>Early-stage research. There is no product, no users, and no external funding. Experiments currently run on a laptop and rented cloud GPUs, with plans to move to AWS as the work grows.</p>
+    <p>Code, notes, and experiment writeups will be added to the <a href="https://github.com/bojro/physical-interp">GitHub repository</a> as the work progresses.</p>
 
     <footer>
       Physical Interp Labs. Code and writing in the repository are released under the MIT License.
