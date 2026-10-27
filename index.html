@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physical Interp Labs</title>
+  <meta name="description" content="Physical Interp Labs is an early-stage research project bringing mechanistic interpretability to physical AI: robot policies, vision-language-action models, and world models.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #555555;
+      --rule: #e2e2e2;
+      --accent: #1f4e79;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --fg: #e8e8e8;
+        --muted: #a0a0a0;
+        --rule: #2c2c2c;
+        --accent: #8fb6dc;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 16px 64px;
+    }
+    header { margin-bottom: 40px; }
+    h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin: 40px 0 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+    }
+    p { margin: 0 0 14px; }
+    ul { padding-left: 22px; margin: 0 0 14px; }
+    li { margin-bottom: 10px; }
+    a { color: var(--accent); }
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Physical Interp Labs</h1>
+      <p class="tagline">Bringing mechanistic interpretability to physical AI.</p>
+    </header>
+
+    <p>Physical Interp Labs is an early-stage research project studying the internals of neural networks that act in the physical world: robot policies, vision-language-action (VLA) models, and world models used for robotics and drones.</p>
+
+    <h2>Motivation</h2>
+    <p>Mechanistic interpretability aims to understand what a neural network computes internally: the features it represents, the circuits that connect them, and how those give rise to its behavior. Most of this work to date has focused on language models.</p>
+    <p>Models that control physical systems make decisions with real-world consequences. When a drone or a robot arm does something unexpected, it is not enough to observe that it happened; we want to know why. Understanding the internal representations of these models matters for:</p>
+    <ul>
+      <li><strong>Safety.</strong> Identifying what a policy is actually attending to, and whether it has learned shortcuts that could fail outside its training distribution.</li>
+      <li><strong>Debugging.</strong> Locating the source of a failure inside the model rather than treating it as a black box.</li>
+      <li><strong>Reliability.</strong> Building evidence about when a model's behavior can be trusted, beyond aggregate benchmark scores.</li>
+    </ul>
+
+    <h2>Research directions</h2>
+    <p class="note">This is planned and ongoing exploratory work. None of it should be read as results.</p>
+    <ul>
+      <li><strong>Feature discovery in action models.</strong> Applying sparse dictionary methods (such as sparse autoencoders) to the activations of open VLA and robot policy models to find interpretable features tied to perception, planning, and motor output.</li>
+      <li><strong>Circuit analysis of control behavior.</strong> Tracing how specific inputs (an obstacle, a target object, a command) propagate through the network to influence the action taken.</li>
+      <li><strong>Representations in world models.</strong> Examining whether world models used for robotics and drones encode physical quantities such as position, velocity, or contact in a readable way.</li>
+      <li><strong>Tooling.</strong> Adapting interpretability tooling built for language models to the multimodal, continuous-action setting of physical AI.</li>
+    </ul>
+
+    <h2>Current status</h2>
+    <p>Early-stage research. There is no product, no users, and no external funding. Experiments are currently run on a laptop and rented cloud GPUs, with plans to move to AWS as the work grows.</p>
+    <p>Code, notes, and experiment writeups will be added to the <a href="https://github.com/bojro/physical-interp">GitHub repository</a> as the work progresses.</p>
+
+    <h2>Founder</h2>
+    <p><strong>Bojro Das</strong> is an undergraduate studying Mathematics and Computer Science at Cornell University (class of 2028). Previously worked on software engineering for CU Auto Drone, Cornell's autonomous drone project team.</p>
+
+    <footer>
+      Physical Interp Labs. Code and writing in the repository are released under the MIT License.
+    </footer>
+  </main>
+</body>
+</html>
