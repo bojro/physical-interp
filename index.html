@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Physical Interp Labs</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBoeXNpY2FsIEludGVycCBMYWJzIGxvZ28iPgogIDwhLS0gb3V0ZXIgZnJhbWU6IGEgcm91bmRlZCBzcXVhcmUgc3VnZ2VzdGluZyBhIHBoeXNpY2FsIHN5c3RlbSAvIGNoaXAgLS0+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNGU3OSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPCEtLSBpbnRlcm5hbCBjaXJjdWl0OiBub2RlcyBhbmQgZWRnZXMgLS0+CiAgPGcgc3Ryb2tlPSIjMWY0ZTc5IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxsaW5lIHgxPSIxOCIgeTE9IjIyIiB4Mj0iMzIiIHkyPSIzMiIvPgogICAgPGxpbmUgeDE9IjQ2IiB5MT0iMjIiIHgyPSIzMiIgeTI9IjMyIi8+CiAgICA8bGluZSB4MT0iMzIiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iNDYiLz4KICAgIDxsaW5lIHgxPSIxOCIgeTE9IjIyIiB4Mj0iNDYiIHkyPSIyMiIvPgogIDwvZz4KICA8ZyBmaWxsPSIjMWY0ZTc5Ij4KICAgIDxjaXJjbGUgY3g9IjE4IiBjeT0iMjIiIHI9IjQiLz4KICAgIDxjaXJjbGUgY3g9IjQ2IiBjeT0iMjIiIHI9IjQiLz4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iNDYiIHI9IjQiLz4KICA8L2c+CiAgPCEtLSB0aGUgcHJvYmVkIG5vZGU6IG9wZW4gY2lyY2xlLCB0aGUgb25lIHdlIGxvb2sgaW5zaWRlIC0tPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzFmNGU3OSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KPC9zdmc+Cg==">
   <meta name="description" content="Physical Interp Labs is an early-stage research project bringing mechanistic interpretability to physical AI: robot policies, vision-language-action models, and world models.">
   <style>
     :root {
@@ -37,10 +38,17 @@
       padding: 48px 16px 64px;
     }
     header { margin-bottom: 40px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .logo { color: var(--accent); flex-shrink: 0; }
     h1 {
       font-size: 2rem;
       line-height: 1.2;
-      margin: 0 0 8px;
+      margin: 0;
     }
     .tagline {
       font-size: 1.15rem;
@@ -73,7 +81,24 @@
 <body>
   <main>
     <header>
-      <h1>Physical Interp Labs</h1>
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 64 64" width="56" height="56" role="img" aria-label="Physical Interp Labs logo">
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="none" stroke="currentColor" stroke-width="3"/>
+          <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="22" x2="32" y2="32"/>
+            <line x1="46" y1="22" x2="32" y2="32"/>
+            <line x1="32" y1="32" x2="32" y2="46"/>
+            <line x1="18" y1="22" x2="46" y2="22"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="18" cy="22" r="4"/>
+            <circle cx="46" cy="22" r="4"/>
+            <circle cx="32" cy="46" r="4"/>
+          </g>
+          <circle cx="32" cy="32" r="5" fill="var(--bg)" stroke="currentColor" stroke-width="2.5"/>
+        </svg>
+        <h1>Physical Interp Labs</h1>
+      </div>
       <p class="tagline">Bringing mechanistic interpretability to physical AI.</p>
     </header>
 

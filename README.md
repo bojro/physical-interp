@@ -1,3 +1,5 @@
+<img src="logo.svg" alt="Physical Interp Labs logo" width="72">
+
 # Physical Interp Labs
 
 **Bringing mechanistic interpretability to physical AI.**
