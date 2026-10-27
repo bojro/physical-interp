@@ -33,6 +33,8 @@ Code, notes, and experiment writeups will be added to this repository as the wor
 
 **Bojro Das** is an undergraduate studying Mathematics and Computer Science at Cornell University (class of 2028). Previously worked on software engineering for CU Auto Drone, Cornell's autonomous drone project team.
 
+Prior interpretability work: *Inherited Heads: Audio language models track speakers with their text backbone's attention, and an attention-mass ranking retrieves a different set* (sole author, arXiv preprint, September 2026). [arXiv:2609.14174](https://arxiv.org/abs/2609.14174)
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
